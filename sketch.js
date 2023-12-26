@@ -1,10 +1,17 @@
 let img_tree;
 let img_wood;
+let img_snow;
+let img_star;
 
 let snowflakes = []; // array to hold snowflake objects
 
+function preload() {
+  myFont=loadFont('assets/frosty.ttf');
+}
+
 function setup() {
   createCanvas(1920, 1080, WEBGL);
+  debugMode();
   fill(240);
   noStroke();
 
@@ -14,6 +21,12 @@ function setup() {
   img_tree=loadImage('tree-texture.jpg')
   img_wood=loadImage('wood-texture2.jpg')
   img_snow=loadImage('snow.jpg')
+  img_star=loadImage('gold-texture.jpg');
+
+  //font
+  textFont(myFont);
+  textSize(150);
+  text('p5*js', 10, 50);
 }
 
 function draw() {
@@ -45,7 +58,7 @@ function draw() {
     push()
     translate(-50, -270, 0);
     rotateY(frameCount * 0.01);
-    rotateX(PI);
+    rotateZ(PI);
     texture(img_tree);
     cone(60, 120);
     pop()
@@ -71,8 +84,38 @@ function draw() {
     box(90, 15, 0);
     pop();
 
+    //star
+    push()
+    translate(-90,-390,-1);
+    texture(img_star);
+    scale(0.2);
+    beginShape();
+    vertex(200, 50);
+    vertex(250, 150);
+    vertex(350, 150);
+    vertex(275, 225);
+    vertex(300, 325);
+    vertex(200, 275);
+    vertex(100, 325);
+    vertex(125, 225);
+    vertex(50, 150);
+    vertex(150, 150);
+    endShape();
+    pop();
 
+    //spheres
+    push();
+    sphere(10,10,0);
+    pop();
     
+    push();
+    text('Merry', -850, -150);
+    text('Christmas',-850,40);
+    scale(0.2);
+    text('by @thepywizard',3100,1000)
+    pop();
+    
+
     //snowflakes
     let t = frameCount / 60; // update time
 

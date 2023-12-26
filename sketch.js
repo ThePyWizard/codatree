@@ -11,7 +11,7 @@ function preload() {
 
 function setup() {
   createCanvas(1920, 1080, WEBGL);
-  debugMode();
+  //debugMode();
   fill(240);
   noStroke();
 

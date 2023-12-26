@@ -1,15 +1,18 @@
 let img_tree;
 let img_wood;
 
-function setup() {
+let snowflakes = []; // array to hold snowflake objects
 
-  createCanvas(710, 400, WEBGL);
+function setup() {
+  createCanvas(1920, 1080, WEBGL);
+
+  //cnv.mousePressed(playaudio);
   img_tree=loadImage('tree-texture.jpg')
   img_wood=loadImage('wood-texture2.jpg')
 }
 
 function draw() {
-
+    background('#191970');
     //position light according to the cursor movement
     let locX = mouseX - height / 2;
     let locY = mouseY - width / 2;
@@ -18,42 +21,41 @@ function draw() {
 
     //triangle creation
     push()
-    translate(-100, -120, 0);
+    translate(-50, -180, 0);
     rotateY(frameCount * 0.01);
     rotateX(PI);
     texture(img_tree);
-    cone(40, 80);
+    cone(120, 240);
     pop()
 
     //triangle creation
     push()
-    translate(-100, -150, 0);
+    translate(-50, -270, 0);
     rotateY(frameCount * 0.01);
     rotateX(PI);
     texture(img_tree);
-    cone(20, 40);
+    cone(60, 120);
     pop()
 
     //triangle creation
     push()
-    translate(-100, -85, 0);
+    translate(-50,-80, 0);
     rotateY(frameCount * 0.01);
     rotateX(PI);
     texture(img_tree);
-    cone(60, 130);
+    cone(180, 390);
     pop()
     
     //rectangle creation
     push();
-    translate(-100, -10, 0);
+    translate(-50, 170, 0);
     texture(img_wood);
-    box(20, 50, 0);
+    box(60, 150, 0);
     pop();
     push();
-    translate(-100, 15, 0);
+    translate(-50, 245, 0);
     texture(img_wood);
-    box(30, 5, 0);
+    box(90, 15, 0);
     pop();
+
 }
-
-

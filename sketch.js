@@ -2,11 +2,13 @@ let img_tree;
 let img_wood;
 let img_snow;
 let img_star;
+let song;
 
 let snowflakes = []; // array to hold snowflake objects
 
 function preload() {
   myFont=loadFont('assets/frosty.ttf');
+  mySong=loadSound('audio/song3.mp3');
 }
 
 function setup() {
@@ -14,7 +16,9 @@ function setup() {
   //debugMode();
   fill(240);
   noStroke();
-
+  mySong.play();
+  mySong.loop();
+  mySong.setVolume(0.15);
   //cnv.mousePressed(playaudio);
 
   //loaded texture for the tree
@@ -109,10 +113,11 @@ function draw() {
     pop();
     
     push();
-    text('Merry', -850, -150);
-    text('Christmas',-850,40);
+    text('Merry', -900, -150);
+    text('Christmas',-900,40);
     scale(0.2);
-    text('by @thepywizard',3100,1000)
+    text('" The best way to spread Christmas cheer is \nsinging loud for all to hear. " ',1200,-400);
+    text('by @thepywizard',-2400,600)
     pop();
     
 

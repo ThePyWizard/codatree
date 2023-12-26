@@ -7,7 +7,7 @@ let song;
 let snowflakes = []; // array to hold snowflake objects
 
 function preload() {
-  myFont=loadFont('assets/frosty.ttf');
+  myFont=loadFont('assets/frosty.TTF');
   mySong=loadSound('audio/song3.mp3');
 }
 

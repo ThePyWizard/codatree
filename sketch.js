@@ -49,7 +49,11 @@ function draw() {
     texture(img_wood);
     box(20, 50, 0);
     pop();
-    
+    push();
+    translate(-100, 15, 0);
+    texture(img_wood);
+    box(30, 5, 0);
+    pop();
 }
 
 

@@ -27,12 +27,11 @@ function draw() {
     //snow rectangle creation
 
     push();
-    translate(-50,350, 0);
-    fill(255, 165, 0)
+    translate(-0,450, 0);
     texture(img_snow);
-    
-    box(1920, 200,-1);
+    box(1920, 400,-1);
     pop();
+
     //triangle creation
     push()
     translate(-50, -180, 0);
@@ -62,17 +61,17 @@ function draw() {
     
     //rectangle creation
     push();
-    translate(-50, 170, 0);
+    translate(-50, 170, -1);
     texture(img_wood);
     box(60, 150, 0);
     pop();
     push();
-    translate(-50, 245, 0);
+    translate(-50, 245, -1);
     texture(img_wood);
     box(90, 15, 0);
     pop();
 
-    
+
     
     //snowflakes
     let t = frameCount / 60; // update time
